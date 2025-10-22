@@ -1,5 +1,5 @@
 export interface CalculateExercise {
-    periodLenght: number[],
+    periodLength: number,
     trainingDays: number,
     average: number,
     succes: boolean,

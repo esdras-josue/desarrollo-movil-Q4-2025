@@ -1,32 +1,31 @@
 import { CalculateExercise } from './models/CalculateExercice';
 
 export function calculateExercice(dailyHours:number[], target:number){
-      const periodLenght: number = dailyHours.length;
+      const periodLength: number = dailyHours.length;
       let trainingDays:number = 0;
-      //let average = 0;
       let totalHours: number = 0;
-      let success = false;
+      let succes = false;
       let rating = 0;
       let ratingDescription = "";
 
-      for(let i = 0; i< periodLenght; i++){
+      for(let i = 0; i< periodLength; i++){
 
         if(dailyHours[i] > 0) {
           trainingDays++;
-          totalHours += dailyHours[i] / 7; // sacar promedio
+          totalHours += dailyHours[i]; // sacar promedio
         }         
       }
 
 
-      const average = totalHours / periodLenght;  
+      const average = totalHours / periodLength;  
         if (average >= 2){
-          success = true;
+          succes = true;
         }
         
         if(average >= 2){
           rating = 3;
           ratingDescription = "Exelente trabajo, objetivo alcanzado";
-        } else if(average >= 1 && 2){
+        } else if(average >= 1 && average < 2){
           rating =2;
           ratingDescription = "Bien, pero podrias mejorar";
         }
@@ -36,10 +35,10 @@ export function calculateExercice(dailyHours:number[], target:number){
         }
 
         const personWeekRoutine: CalculateExercise ={
-          periodLenght: dailyHours,
+          periodLength: dailyHours.length,
           trainingDays: trainingDays,
           average: average,
-          succes: success,
+          succes: succes,
           rating: rating,
           ratingDescription: ratingDescription
         } 
