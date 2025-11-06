@@ -1,18 +1,12 @@
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import EstudianteProvider from './Provider/EstudianteProvider';
-import ListaEstudiantes from './Consumer/ListaEstudiantes';
-
 
 export default function App() {
   return (
-    <EstudianteProvider>
-      <View style={{ flex: 1, marginTop: 40}}>
-        <ListaEstudiantes />
-
-      </View>
-    </EstudianteProvider>
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
